@@ -138,7 +138,7 @@ func main() {
 		if *input == "" {
 			var sessionId int
 			r := bufio.NewReader(os.Stdin)
-			for line, err := r.ReadString('\n'); strings.ToLower(line) != "exit" && err == nil; line, err = r.ReadString('\n') {
+			for line, err := r.ReadString('\n'); strings.ToLower(line) != "exit\n" && err == nil; line, err = r.ReadString('\n') {
 				res, err := c.Talk(*name, line, "", sessionId, false)
 				if err != nil {
 					fmt.Printf("%v\n", err)
